@@ -655,4 +655,43 @@ body.dark-theme .about-container {
     margin-bottom: 0.5rem;
     line-height: 1.5;
   }
-  
+  /* Dark Theme */
+body.dark-theme .packages {
+  padding: 4rem 1rem;
+  background-color: #1a1a1a; /* Dark background */
+  margin: 20px;
+  border-radius: 10px;
+  color: #e0e0e0; /* Light text color */
+}
+
+body.dark-theme .header-title {
+  font-size: 2rem;
+  color: #e0e0e0; /* Light text color */
+  text-shadow: 1px 1px 2px black, 0 0 25px #007bff, 0 0 5px darkblue;
+}
+
+body.dark-theme .custom-button {
+  background-color: #007bff; /* Primary button color */
+  color: white;
+}
+
+body.dark-theme .custom-button:hover {
+  background-color: #0056b3;
+}
+
+body.dark-theme .package-grid {
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.8), rgba(30, 30, 30, 0.8)); /* Dark cloudy effect */
+}
+
+body.dark-theme .package-card {
+  background: #2c2c2c; /* Dark background for cards */
+  border: 1px solid #444; /* Dark border */
+}
+
+body.dark-theme .package-title {
+  color: #e0e0e0; /* Light text color */
+}
+
+body.dark-theme .package-list li {
+  color: #bbb; /* Light text color */
+}
