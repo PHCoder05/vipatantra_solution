@@ -1,0 +1,523 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'antonin', sans-serif;
+    padding-top: 80px;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: white;
+    transition: background 0.3s, color 0.3s;
+  }
+  
+  .navbar {
+    width: 80%;
+    max-width: 1200px;
+    background-color: white;
+    margin: 10px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+  }
+  
+  .navbar-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+  }
+  
+  .navbar-menu {
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+  }
+  
+  .navbar-link {
+    margin-left: 2rem;
+    color: #333;
+    text-decoration: none;
+    font-size: 13px;
+    transition: color 0.3s ease, transform 0.3s ease;
+    position: relative;
+  }
+  
+  .navbar-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    display: block;
+    margin-top: 5px;
+    right: 0;
+    background: #007BFF;
+    transition: width 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .navbar-link:hover::after {
+    width: 100%;
+    left: 0;
+    background: #007BFF;
+  }
+  
+  .navbar-button {
+    margin: 0 auto;
+    padding: 0.5rem 1rem;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .navbar-button:hover {
+    background-color: #333;
+    transform: scale(1.1);
+  }
+  
+  .navbar-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  
+  .navbar-toggle-icon {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 4px 0;
+    transition: background-color 0.3s ease;
+  }
+  
+  .theme-toggle-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    margin-left: 1rem;
+  }
+  
+  @media (max-width: 768px) {
+    .navbar {
+      width: 90%;
+    }
+  
+    .navbar-menu {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      background-color: rgb(255, 255, 255);
+      position: absolute;
+      top: 60px;
+      left: 0;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 0 0 10px 10px;
+      
+    }
+  
+    .navbar-menu.active {
+      display: flex;
+    }
+  
+    .navbar-link {
+      margin: 1rem 0;
+      text-align: center;
+      color: black;
+    }
+  
+    .navbar-link::after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 1px;
+      background: #ddd;
+      margin: 10px 0;
+    }
+  
+    .navbar-toggle {
+      display: flex;
+    }
+  
+    .navbar-button {
+      margin: 1rem auto;
+      width: 30%;
+      text-align: center;
+    }
+  }
+  
+  /* Dark theme styles */
+  body.dark-theme {
+    background: linear-gradient(to right, #333, #000);
+    color: white;
+  }
+  
+  body.dark-theme .navbar {
+    background-color: #333;
+    color: white;
+  }
+  
+  body.dark-theme .navbar-link {
+    color: white;
+  }
+  
+  body.dark-theme .navbar-link:hover::after {
+    background: #007BFF;
+  }
+  
+  body.dark-theme .navbar-button {
+    background-color: white;
+    color: black;
+  }
+  
+  body.dark-theme .navbar-button:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  body.dark-theme .navbar-toggle-icon {
+    background-color: white;
+  }
+  
+  body.dark-theme .navbar-menu.active {
+    background-color: #333;
+  }
+  
+
+.hero {
+    height: calc(100vh - 80px);
+    background: url('https://website-cdn.adymize.com/assets/images/Adymize/map.png') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.hero h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    color: rgb(251, 249, 249);
+    animation: fadeInDown 1s ease-in-out;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: rgb(240, 237, 237);
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.hero .hero-button {
+    padding: 1rem 2rem;
+    text-decoration: none;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.hero .btn-primary {
+    background-color: #2c3145;
+    border: none;
+}
+
+.hero .btn-outline-light {
+    border: 2px solid #2c3145;
+    color: #2c3145;
+}
+
+.hero .hero-button:hover {
+    background-color: #00bd2a !important;
+    transform: translateY(-5px);
+}
+
+.section_all {
+    position: relative;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    min-height: 100vh;
+}
+
+.section-title {
+    font-weight: 700;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    color: #2c3145;
+}
+
+.section-subtitle {
+    letter-spacing: 0.4px;
+    line-height: 28px;
+    max-width: 550px;
+    color: #00bd2a;
+}
+
+.section-title-border {
+    background-color: #2c3145;
+    height: 3px;
+    width: 44px;
+    margin: 10px auto;
+}
+
+.section-title-border-white {
+    background-color: #fff;
+    height: 2px;
+    width: 100px;
+}
+
+.text_custom {
+    color: #00bd2a;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.custom-hero::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 200px; /* Adjusted width */
+    height: 150px; /* Adjusted height */
+    background-image: url('../images/corner.svg'); /* Path to your corner image */
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .about-container {
+    background: #f0f2f5;
+    border-radius: 10px;
+    margin: 20px;
+    padding: 20px;
+    max-width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .about-header {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: double;
+    font-weight: bold;
+  }
+  .about-header {
+    position: relative;
+    display: inline-block;
+    cursor: pointer; /* Optional: Makes it clear that the element is interactive */
+  }
+  
+  .about-header::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -5px; /* Adjust this to place the underline where you want it */
+    width: 0;
+    height: 2px; /* Adjust this to change the thickness of the underline */
+    background: #007BFF;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+  }
+  
+  .about-header:hover {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow on hover */
+  }
+  
+  .about-header:hover::after {
+    width: 100%;
+    left: 50%;
+    background: #007BFF;
+    transform: translateX(-50%);
+  }
+  .about-content-image {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+  .about-content {
+    color: #666;
+    max-width: 100%;
+    text-align: left;
+    font-size: 1.1em;
+    line-height: 1.6;
+    padding: 10px;
+    flex-basis: 100%;
+    perspective: 1000px;
+  }
+  
+  .about-image {
+    max-width: 100%;
+    flex-basis: 100%;
+    padding: 10px;
+    perspective: 1000px;
+  }
+  
+  .about-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    transform-style: preserve-3d;
+  }
+  
+  .about-image img:hover {
+    transform: rotateY(10deg) rotateX(10deg) scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .button {
+    padding: 10px 20px;
+    background: #6E8EF5;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin: 0 10px;
+  }
+  
+  .button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .overlay {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    z-index: 1;
+    text-align: center;
+    padding: 20px;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    transform: scale(0.8);
+    pointer-events: none;
+  }
+  
+  .overlay-content {
+    background: #ffffff;
+    color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 80%;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .button-container .button:hover + .overlay {
+    display: flex;
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: auto;
+  }
+  
+  @media screen and (min-width: 768px) {
+    .about-content {
+      max-width: 45%;
+      flex-basis: 45%;
+      text-align: left;
+      margin-right: 5%;
+    }
+  
+    .about-image {
+      max-width: 45%;
+      flex-basis: 45%;
+    }
+  
+    .about-image img {
+      transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
+    }
+  
+    .about-image img:hover {
+      transform: perspective(1000px) rotateY(10deg) rotateX(10deg) scale(1.05);
+    }
+  }
+  /* Dark Theme */
+body.dark-theme .about-container {
+    background: #1c1c1e;
+    color: #ffffff;
+  }
+  
+  body.dark-theme .about-header {
+    color: #ffffff;
+  }
+  
+  body.dark-theme .about-content {
+    color: #cccccc;
+  }
+  
+  body.dark-theme .about-image img {
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+  }
+  
+  body.dark-theme .button {
+    background: #4444dd;
+    color: #ffffff;
+  }
+  
+  body.dark-theme .button:hover {
+    box-shadow: 0 10px 15px rgba(255, 255, 255, 0.1);
+  }
+  
+  body.dark-theme .overlay-content {
+    background: #333333;
+    color: #ffffff;
+  }
+  
+  body.dark-theme .overlay {
+    background: rgba(255, 255, 255, 0.7);
+  }
+  
