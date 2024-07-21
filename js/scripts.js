@@ -75,15 +75,3 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-document.addEventListener('scroll', () => {
-  const imageSection = document.querySelector('.lg:flex.relative');
-  const message = document.getElementById('message');
-  const rect = imageSection.getBoundingClientRect();
-  
-  // Adjust the threshold value as needed
-  if (rect.top < window.innerHeight && rect.bottom >= 0) {
-      message.classList.remove('hidden');
-  } else {
-      message.classList.add('hidden');
-  }
-});
