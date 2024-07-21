@@ -317,8 +317,9 @@
     background-size: contain;
     background-repeat: no-repeat;
   }
+
+  /* about us */
   .about-container {
-    background: #f0f2f5;
     border-radius: 10px;
     margin: 20px;
     padding: 20px;
@@ -331,18 +332,18 @@
   
   .about-header {
     font-size: 2.5em;
-    color: #333;
+    /* color: #333; */
     margin-bottom: 20px;
     text-transform: uppercase;
     letter-spacing: 1px;
     text-decoration: double;
     font-weight: bold;
   }
-  .about-header {
+  /* .about-header {
     position: relative;
     display: inline-block;
-    cursor: pointer; /* Optional: Makes it clear that the element is interactive */
-  }
+    cursor: pointer; 
+  } */
   
   .about-header::after {
     content: '';
@@ -374,7 +375,7 @@
     flex-wrap: wrap;
   }
   .about-content {
-    color: #666;
+    color: #f4eaea;
     max-width: 100%;
     text-align: left;
     font-size: 1.1em;
@@ -385,25 +386,19 @@
   }
   
   .about-image {
-    max-width: 100%;
-    flex-basis: 100%;
+    max-width: 60%;
+    flex-basis: 40%;
     padding: 10px;
     perspective: 1000px;
   }
   
   .about-image img {
-    width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 60%;
     transition: transform 0.3s, box-shadow 0.3s;
     transform-style: preserve-3d;
   }
   
-  .about-image img:hover {
-    transform: rotateY(10deg) rotateX(10deg) scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  }
-  
+
   .button-container {
     display: flex;
     justify-content: center;
@@ -411,9 +406,9 @@
   }
   
   .button {
-    padding: 10px 20px;
-    background: #6E8EF5;
-    color: #ffffff;
+    padding: 10px 20vw;
+    background: #ffffff;
+    color: #6E8EF5;
     border: none;
     border-radius: 5px;
     font-size: 1.2em;
