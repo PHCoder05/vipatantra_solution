@@ -319,18 +319,18 @@
   }
 
   /* about us */
-  .about-container {
+  .container {
     border-radius: 10px;
     margin: 20px;
     padding: 20px;
     max-width: 100%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 12px rgba(128, 128, 128, 0.5); /* Gray with 50% opacity */
     text-align: center;
     position: relative;
     overflow: hidden;
   }
   
-  .about-header {
+  .header {
     font-size: 2.5em;
     /* color: #333; */
     margin-bottom: 20px;
@@ -339,13 +339,13 @@
     text-decoration: double;
     font-weight: bold;
   }
-  /* .about-header {
+  .header {
     position: relative;
     display: inline-block;
     cursor: pointer; 
-  } */
+  }
   
-  .about-header::after {
+  .header::after {
     content: '';
     position: absolute;
     left: 50%;
@@ -357,11 +357,11 @@
     transform: translateX(-50%);
   }
   
-  .about-header:hover {
+  .header:hover {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow on hover */
   }
   
-  .about-header:hover::after {
+  .header:hover::after {
     width: 100%;
     left: 50%;
     background: #007BFF;
@@ -516,11 +516,79 @@ body.dark-theme .about-container {
     background: rgba(255, 255, 255, 0.7);
   }
   
+  .service-container {
+    display: flex;
+    justify-content: center;
+    width: 98%;
+    padding: 30px;
+}
+
+.service-container > h1 {
+    width: 50vw;
+    text-align: center;
+    color: #0056b3;
+}
+
+.services {
+    box-shadow: 2px solid #0056b3;
+    background-color: white;
+    margin: 10px;
+    padding: 15px;
+    font-weight: 300;
+    color: #000;
+    border-radius: 15px;
+}
+
+.bold {
+    font-weight: 900;
+    color: rgb(27, 7, 248);
+    font-size: 1.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .service-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .service-container > h1 {
+        width: 80vw;
+    }
+
+    .services {
+        width: 90%;
+    }
+
+    .bold {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .service-container {
+        padding: 15px;
+    }
+
+    .service-container > h1 {
+        width: 90vw;
+        font-size: 1.5rem;
+    }
+
+    .services {
+        width: 100%;
+    }
+
+    .bold {
+        font-size: 1rem;
+    }
+}
 
   /* Packages */
   .packages {
     padding: 4rem 1rem;
-    background-color: #f9f9f9;
+    /* background-color: #f9f9f9; */
     margin: 20px;
     border-radius: 10px;
   }
@@ -553,140 +621,74 @@ body.dark-theme .about-container {
     background-color: #0056b3;
     transform: scale(1.05);
   }
-  
-  /* Mobile view adjustments */
-  @media (max-width: 767px) {
-    .package-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      width: 100%;
-      position: static; /* Ensure it follows the normal document flow */
-      margin-top: 1rem; /* Space between the image and the grid */
-      background: radial-gradient(circle, rgba(255, 255, 255, 0.8), rgba(230, 230, 230, 0.8)); /* Cloudy effect with circular gradient */
-      padding: 1rem;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.3s ease, visibility 0.3s ease;
-    }
-  
-    .package-grid.visible {
-      opacity: 1;
-      visibility: visible;
-    }
-  
-    #viewPlanButton {
-      margin-bottom: 1rem;
-    }
-  }
-  
-  /* Desktop view adjustments */
-  @media (min-width: 768px) {
-    .package-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2rem;
-      position: absolute;
-      top: -20rem; /* Adjust based on how far above the button you want the grid */
-      left: 50%;
-      transform: translateX(-50%);
-      width: 90%;
-      background: radial-gradient(circle, rgba(255, 255, 255, 0.9), rgba(230, 230, 230, 0.9)); /* Cloudy effect with circular gradient */
-      padding: 1rem;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.3s ease, visibility 0.3s ease;
-      z-index: 5; /* Ensure grid is below button but above other content */
-    }
-  
-    .package-grid.visible {
-      opacity: 1;
-      visibility: visible;
-    }
-  }
-  
-  .package-card {
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 0.5rem;
-    padding: 2rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .package-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  }
-  
-  .package-title {
-    margin-bottom: 1rem;
+
+  /* Service Section*/
+
+  .service-container {
+    display: flex;
+    justify-content: center;
+    width: 98%;
+    padding: 30px;
+}
+
+.service-container > h1 {
+    width: 50vw;
+    text-align: center;
+    color: #0056b3;
+}
+
+.services {
+    box-shadow: 2px solid #0056b3;
+    background-color: white;
+    margin: 10px;
+    padding: 15px;
+    font-weight: 300;
+    color: #000;
+    border-radius: 15px;
+}
+
+.bold {
+    font-weight: 900;
+    color: rgb(27, 7, 248);
     font-size: 1.5rem;
-    color: #333;
-    position: relative;
-    padding-bottom: 0.5rem;
-  }
-  
-  .package-title::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 50px;
-    height: 3px;
-    background-color: #007bff;
-  }
-  
-  .package-list {
-    padding-left: 1.5rem;
-    margin-bottom: 1.5rem;
-    list-style-type: disc;
-  }
-  
-  .package-list li {
-    color: #555;
-    margin-bottom: 0.5rem;
-    line-height: 1.5;
-  }
-  /* Dark Theme */
-body.dark-theme .packages {
-  padding: 4rem 1rem;
-  background-color: #1a1a1a; /* Dark background */
-  margin: 20px;
-  border-radius: 10px;
-  color: #e0e0e0; /* Light text color */
 }
 
-body.dark-theme .header-title {
-  font-size: 2rem;
-  color: #e0e0e0; /* Light text color */
-  text-shadow: 1px 1px 2px black, 0 0 25px #007bff, 0 0 5px darkblue;
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .service-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .service-container > h1 {
+        width: 80vw;
+    }
+
+    .services {
+        width: 90%;
+    }
+
+    .bold {
+        font-size: 1.2rem;
+    }
 }
 
-body.dark-theme .custom-button {
-  background-color: #007bff; /* Primary button color */
-  color: white;
-}
+@media (max-width: 480px) {
+    .service-container {
+        padding: 15px;
+    }
 
-body.dark-theme .custom-button:hover {
-  background-color: #0056b3;
-}
+    .service-container > h1 {
+        width: 90vw;
+        font-size: 1.5rem;
+    }
 
-body.dark-theme .package-grid {
-  background: radial-gradient(circle, rgba(0, 0, 0, 0.8), rgba(30, 30, 30, 0.8)); /* Dark cloudy effect */
-}
+    .services {
+        width: 100%;
+    }
 
-body.dark-theme .package-card {
-  background: #2c2c2c; /* Dark background for cards */
-  border: 1px solid #444; /* Dark border */
-}
-
-body.dark-theme .package-title {
-  color: #e0e0e0; /* Light text color */
-}
-
-body.dark-theme .package-list li {
-  color: #bbb; /* Light text color */
-}
+    .bold {
+        font-size: 1rem;
+    }
+}  

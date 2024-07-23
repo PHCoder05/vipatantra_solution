@@ -7,6 +7,7 @@
 
     <link rel="stylesheet" href="css/styles.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Golos+Text&display=swap"
@@ -14,7 +15,8 @@
     <link
       href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
       rel="stylesheet"
-    /> 
+    />
+
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
@@ -93,6 +95,50 @@ imageContainer.addEventListener('mouseleave', () => {
     opacity: 1;
 }
 
+.background-section {
+  height: 100vh;
+  /*background: linear-gradient(90deg, rgba(134,168,231,1) 0%, rgba(224,145,243,1) 100%);*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.content {
+  position: relative;
+  text-align: center;
+}
+
+.content img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.view-plan-btn {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  color: #5a67d8;
+  border: none;
+  border-radius: 10px;
+  padding: 15px 30px;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.view-plan-btn:hover {
+  background-color: #5a67d8;
+  color: white;
+}
+
 
         </style>
         
@@ -152,9 +198,9 @@ imageContainer.addEventListener('mouseleave', () => {
         
         
         <section>
-          <div class="about-container">
+          <div class="container">
             <div style="  text-shadow: 2px 2px 4px #fffbfb ; text-align: left;
-" class="about-header ">About us</div>
+" class="header ">About us</div>
             <div class="about-content-image">
               <div class="about-content">
                 <p>
@@ -188,60 +234,42 @@ imageContainer.addEventListener('mouseleave', () => {
             </div>
           </div>
         </section>
-        <section>
-          <div class="services">
-            .
-          </div>
-        </section>
-        <section class="packages">
-          <div class="container mx-auto px-4 py-8">
-            <div class="text-center my-5">
-              <h2 class="header-title">Our Packages</h2>
-            </div>
-            <div class="relative">
-              <div class="flex justify-center items-center mt-8">
-                <button class="custom-button" id="viewPlanButton">View Plan</button>
+
+        <section class="container">
+          <div style="text-shadow: 2px 2px 4px #fffbfb; text-align: left;" class="header">Our Services</div>
+          <div class="service-container">
+              <div class="services">
+                  <h1 class="bold">Strategy</h1>
+                  <p>
+                      Effective strategy is the cornerstone of success in eCommerce. Our team of strategists works closely with
+                      you to develop tailored plans that align with your business objectives and market dynamics.
+                  </p>
               </div>
-              <img src="images/package.png" alt="packages" class="centered-image"/>
-        
-              <div class="package-grid" id="packagesGrid">
-                <div class="package-card" id="dropshipping">
-                  <h3 class="package-title">Dropshipping</h3>
-                  <ul class="package-list">
-                    <li>Setup of Woocommerce/shopify / hostinger builder (Adding 21 products for fee).</li>
-                    <li>Onpage SEO.</li>
-                    <li>Integration of shiprocket for delivery.</li>
-                    <li>Integration of payment gateway.</li>
-                    <li>Domain & Hosting 2GB</li>
-                    <li>Delivery time 2 weeks (for development process).</li>
-                    <li>Total Cost = ₹ 30,000/-.</li>
-                    <li>Annual Renewal = ₹ 10,000/-.</li>
-                  </ul>
-                  <button class="package-button">Learn More</button>
-                </div>
-                <div class="package-card" id="ecommerce">
-                  <h3 class="package-title">E-Commerce</h3>
-                  <ul class="package-list">
-                    <li>Setup of Woocommerce/shopify / hostinger builder (Adding 21 products for free).</li>
-                    <li>Onpage SEO.</li>
-                    <li>listing to marketplaces (Amazon/flipkart) etc</li>
-                    <li>Integration of shiprocket / dunzo for delivery.</li>
-                    <li>Delivery time min 2 weeks (for development process)..</li>
-                    <li>Total Cost = ₹ 35,000/-</li>
-                    <li>Annual Renewal = ₹ 10,000/-</li>
-                  </ul>
-                  <button class="package-button">Learn More</button>
-                </div>
+              <div class="services">
+                  <h1 class="bold">Creativity</h1>
+                  <p>
+                      We offer top-notch design services in the areas of branding, UI/UX, that helps keep your customers
+                      interested and engaged at every interaction.
+                  </p>
               </div>
-            </div>
+              <div class="services">
+                  <h1 class="bold">Marketing</h1>
+                  <p>
+                      We offer best-in-class digital marketing services like SEO, PPC, Email Marketing, and Social Media Marketing
+                      to keep your business visible to your targeted customers.
+                  </p>
+              </div>
+              <div class="services">
+                  <h1 class="bold">Development</h1>
+                  <p>
+                      Bring your eCommerce vision to life with our expert development services. Whether you’re starting from
+                      scratch or looking to improve an existing site, our team will help you build a stronger online presence.
+                  </p>
+              </div>
           </div>
-        </section>
-        
-        
-        
+      </section>
+
 
         <script src="js/scripts.js"></script>
       </body>
     </html>
-  </body>
-</html>
