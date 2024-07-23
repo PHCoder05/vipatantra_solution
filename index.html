@@ -95,6 +95,50 @@ imageContainer.addEventListener('mouseleave', () => {
     opacity: 1;
 }
 
+.background-section {
+  height: 100vh;
+  /*background: linear-gradient(90deg, rgba(134,168,231,1) 0%, rgba(224,145,243,1) 100%);*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.content {
+  position: relative;
+  text-align: center;
+}
+
+.content img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.view-plan-btn {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  color: #5a67d8;
+  border: none;
+  border-radius: 10px;
+  padding: 15px 30px;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.view-plan-btn:hover {
+  background-color: #5a67d8;
+  color: white;
+}
+
 
         </style>
         
@@ -192,7 +236,12 @@ imageContainer.addEventListener('mouseleave', () => {
         </section>
         <section>
           <div class="services">
-            .
+            <section class="background-section">
+              <div class="content">
+                  <img src="./images/viewplan.png" alt="Illustration">
+                  <button class="view-plan-btn">View Plan</button>
+              </div>
+          </section>
           </div>
         </section>
         <section class="packages">
