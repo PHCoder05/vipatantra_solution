@@ -1,5 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home</title>
+
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text&display=swap" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
+  <!DOCTYPE html>
+  <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,243 +26,257 @@
 
     <link rel="stylesheet" href="css/styles.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Golos+Text&display=swap"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
-      rel="stylesheet"
-    />
-
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text&display=swap" />
     <script src="https://cdn.tailwindcss.com"></script>
-  </head>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const textElement = document.querySelector(".typing-animation");
+        const text = textElement.getAttribute('data-text');
+        textElement.textContent = "";
+        textElement.setAttribute('data-text', text);
+
+        let index = 0;
+        const speed = 100; // Speed of typing effect in milliseconds
+
+        function type() {
+          if (index < text.length) {
+            textElement.textContent += text.charAt(index);
+            index++;
+            setTimeout(type, speed);
+          } else {
+            // Add the typing class to start the full animation
+            textElement.classList.add('typing');
+          }
+        }
+
+        type();
+      });
+      const imageContainer = document.querySelector('.group');
+      const message = document.getElementById('message');
+
+      imageContainer.addEventListener('mouseenter', () => {
+        message.classList.add('opacity-100');
+      });
+
+      imageContainer.addEventListener('mouseleave', () => {
+        message.classList.remove('opacity-100');
+      });
+
+    </script>
+    <style>
+      .relative {
+        position: relative;
+      }
+
+      .absolute {
+        position: absolute;
+      }
+
+      .inset-0 {
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+      }
+
+      .opacity-0 {
+        opacity: 0;
+      }
+
+      .opacity-100 {
+        opacity: 1;
+      }
+
+      .transition-opacity {
+        transition: opacity 0.3s ease;
+      }
+
+      .group:hover #message {
+        opacity: 1;
+      }
+    </style>
+
   <body class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
-    <!DOCTYPE html>
-    <html lang="en">
-      <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Home</title>
-
-        <link rel="stylesheet" href="css/styles.css" />
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Golos+Text&display=swap"
-        />
-        <script src="https://cdn.tailwindcss.com"></script>
-        <script>
-          document.addEventListener("DOMContentLoaded", function() {
-            const textElement = document.querySelector(".typing-animation");
-            const text = textElement.getAttribute('data-text');
-            textElement.textContent = "";
-            textElement.setAttribute('data-text', text);
-        
-            let index = 0;
-            const speed = 100; // Speed of typing effect in milliseconds
-        
-            function type() {
-              if (index < text.length) {
-                textElement.textContent += text.charAt(index);
-                index++;
-                setTimeout(type, speed);
-              } else {
-                // Add the typing class to start the full animation
-                textElement.classList.add('typing');
-              }
-            }
-        
-            type();
-          });
-          const imageContainer = document.querySelector('.group');
-const message = document.getElementById('message');
-
-imageContainer.addEventListener('mouseenter', () => {
-    message.classList.add('opacity-100');
-});
-
-imageContainer.addEventListener('mouseleave', () => {
-    message.classList.remove('opacity-100');
-});
-
-        </script>
-        <style>
-        .relative {
-    position: relative;
-}
-.absolute {
-    position: absolute;
-}
-.inset-0 {
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-}
-.opacity-0 {
-    opacity: 0;
-}
-.opacity-100 {
-    opacity: 1;
-}
-.transition-opacity {
-    transition: opacity 0.3s ease;
-}
-.group:hover #message {
-    opacity: 1;
-}
-
-
-        </style>
-        
-        <body class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
-          <section>
-            <nav class="navbar">
-              <div class="navbar-container">
-                <a href="#" class="navbar-logo">
-                  <img src="images/logo.jpeg" width="100px" alt="logo" class="logo" />
-                </a>
-                <div class="navbar-menu" id="navbarMenu">
-                  <a href="#home" class="navbar-link">Home</a>
-                  <a href="#about" class="navbar-link">About</a>
-                  <a href="#portfolio" class="navbar-link">Portfolio</a>
-                  <a href="#career" class="navbar-link">Career</a>
-                  <a href="#packages" class="navbar-link">Packages</a>
-                  <a href="#contact" class="navbar-link">Contact</a>
-                </div>
-                <a href="tel:+1234567890" class="navbar-button">Call Now</a>
-                <div class="navbar-toggle" id="navbarToggle">
-                  <span class="navbar-toggle-icon"></span>
-                  <span class="navbar-toggle-icon"></span>
-                  <span class="navbar-toggle-icon"></span>
-                </div>
-                <button id="themeToggle" class="theme-toggle-button">🌗</button>
-              </div>
-            </nav>
-          </section>
-          <section class="hero relative custom-hero">
-            <div class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
-                <div class="mr-auto place-self-center lg:col-span-7">
-                    <h1
-                        class="max-w-2xl mb-4 text-2xl font-extrabold tracking-tight leading-none sm:text-3xl md:text-2xl lg:text-4xl xl:text-4xl dark:text-white typing-animation"
-                        data-text="Hello Entrepreneurs! Your Partner In E-Commerce Store Journey..."
-                    >
-                       
-                    </h1>
-                    <p class="max-w-2xl mb-6 font-light text-white lg:mb-8 md:text-lg lg:text-xl"> 
-
-                        Welcome to Markyway.com, We are team of passionate experts Working Hard to Help you become successful in your online journey.
-                    </p>
-                    <a href="#" class="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900">
-                        Get started
-                        <svg class="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-                        </svg>
-                    </a>
-                    <a href="#" class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
-                        chat with us
-                    </a>
-                </div>
-                <div class="hidden lg:mt-0 lg:col-span-5 lg:flex relative group">
-                    <img src="images/man_cartoon.png" alt="mockup" class="image" />
-                </div>
-            </div>
-        </section>
-        
-        
-        <section>
-          <div class="about-container">
-            <div style="  text-shadow: 2px 2px 4px #fffbfb ; text-align: left;
-" class="about-header ">About us</div>
-            <div class="about-content-image">
-              <div class="about-content">
-                <p>
-                  Welcome to Markyway.com. Our journey begins on 13 Jan, 2023.
-                  We are a team of passionate experts working hard to help you
-                  become successful in your online journey! We are a digital
-                  marketing agency for eCommerce stores to build your online
-                  store.
-                </p>
-              </div>
-              <!-- image container -->
-              <div class="about-image">
-                <img src="images/about_us.png " alt="About Us Image" />
-              </div>
-            </div>
-            <div class="button-container">
-              <button class="button" id="vision-btn">Vision</button>
-              <button class="button" id="mission-btn">Mission</button>
-            </div>
-            <div class="overlay" id="vision-overlay">
-              <div class="overlay-content">
-                Our vision is to empower local Businesses and dropshipper ' s in
-                E-commerce Store to succed in their online journey!
-              </div>
-            </div>
-            <div class="overlay" id="mission-overlay"> 
-              <div class="overlay-content">
-                Our mission is to provide latest technologies in the market to
-                grow and build their successfull online Stores.
-              </div>
-            </div>
+    <section>
+      <nav class="navbar">
+        <div class="navbar-container">
+          <a href="#" class="navbar-logo">
+            <img src="images/logo.jpeg" width="100px" alt="logo" class="logo" />
+          </a>
+          <div class="navbar-menu" id="navbarMenu">
+            <a href="#home" class="navbar-link">Home</a>
+            <a href="#about" class="navbar-link">About</a>
+            <a href="#portfolio" class="navbar-link">Portfolio</a>
+            <a href="#career" class="navbar-link">Career</a>
+            <a href="#packages" class="navbar-link">Packages</a>
+            <a href="#contact" class="navbar-link">Contact</a>
           </div>
-        </section>
-        <section>
+          <a href="tel:+1234567890" class="navbar-button">Call Now</a>
+          <div class="navbar-toggle" id="navbarToggle">
+            <span class="navbar-toggle-icon"></span>
+            <span class="navbar-toggle-icon"></span>
+            <span class="navbar-toggle-icon"></span>
+          </div>
+          <button id="themeToggle" class="theme-toggle-button">🌗</button>
+        </div>
+      </nav>
+    </section>
+    <section class="hero relative custom-hero">
+      <div class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
+        <div class="mr-auto place-self-center lg:col-span-7">
+          <h1
+            class="max-w-2xl mb-4 text-2xl font-extrabold tracking-tight leading-none sm:text-3xl md:text-2xl lg:text-4xl xl:text-4xl dark:text-white typing-animation"
+            data-text="Hello Entrepreneurs! Your Partner In E-Commerce Store Journey...">
+
+          </h1>
+          <p class="max-w-2xl mb-6 font-light text-white lg:mb-8 md:text-lg lg:text-xl">
+
+            Welcome to Markyway.com, We are team of passionate experts Working Hard to Help you become successful in
+            your online journey.
+          </p>
+          <a href="#"
+            class="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900">
+            Get started
+            <svg class="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                clip-rule="evenodd"></path>
+            </svg>
+          </a>
+          <a href="#"
+            class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+            chat with us
+          </a>
+        </div>
+        <div class="hidden lg:mt-0 lg:col-span-5 lg:flex relative group">
+          <img src="images/man_cartoon.png" alt="mockup" class="image" />
+        </div>
+      </div>
+    </section>
+
+
+    <section>
+      <div class="container">
+        <div style="  text-shadow: 2px 2px 4px #fffbfb ; text-align: left;
+" class="header">About us</div>
+        <div class="about-content-image">
+          <div class="about-content">
+            <p>
+              Welcome to Markyway.com. Our journey begins on 13 Jan, 2023.
+              We are a team of passionate experts working hard to help you
+              become successful in your online journey! We are a digital
+              marketing agency for eCommerce stores to build your online
+              store.
+            </p>
+          </div>
+          <!-- image container -->
+          <div class="about-image">
+            <img src="images/about_us.png " alt="About Us Image" />
+          </div>
+        </div>
+        <div class="button-container">
+          <button class="button" id="vision-btn">Vision</button>
+          <button class="button" id="mission-btn">Mission</button>
+        </div>
+        <div class="overlay" id="vision-overlay">
+          <div class="overlay-content">
+            Our vision is to empower local Businesses and dropshipper ' s in
+            E-commerce Store to succed in their online journey!
+          </div>
+        </div>
+        <div class="overlay" id="mission-overlay">
+          <div class="overlay-content">
+            Our mission is to provide latest technologies in the market to
+            grow and build their successfull online Stores.
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="container">
+      <div style="text-shadow: 2px 2px 4px #fffbfb; text-align: left;" class="header">Our Services</div>
+      <div class="service-container">
           <div class="services">
-            .
+              <h1 class="bold">Strategy</h1>
+              <p>
+                  Effective strategy is the cornerstone of success in eCommerce. Our team of strategists works closely with
+                  you to develop tailored plans that align with your business objectives and market dynamics.
+              </p>
           </div>
-        </section>
-        <section class="packages">
-          <div class="container mx-auto px-4 py-8">
-            <div class="text-center my-5">
-              <h2 class="header-title">Our Packages</h2>
-            </div>
-            <div class="relative">
-              <div class="flex justify-center items-center mt-8">
-                <button class="custom-button" id="viewPlanButton">View Plan</button>
-              </div>
-              <img src="images/package.png" alt="packages" class="centered-image"/>
-        
-              <div class="package-grid" id="packagesGrid">
-                <div class="package-card" id="dropshipping">
-                  <h3 class="package-title">Dropshipping</h3>
-                  <ul class="package-list">
-                    <li>Setup of Woocommerce/shopify / hostinger builder (Adding 21 products for fee).</li>
-                    <li>Onpage SEO.</li>
-                    <li>Integration of shiprocket for delivery.</li>
-                    <li>Integration of payment gateway.</li>
-                    <li>Domain & Hosting 2GB</li>
-                    <li>Delivery time 2 weeks (for development process).</li>
-                    <li>Total Cost = ₹ 30,000/-.</li>
-                    <li>Annual Renewal = ₹ 10,000/-.</li>
-                  </ul>
-                  <button class="package-button">Learn More</button>
-                </div>
-                <div class="package-card" id="ecommerce">
-                  <h3 class="package-title">E-Commerce</h3>
-                  <ul class="package-list">
-                    <li>Setup of Woocommerce/shopify / hostinger builder (Adding 21 products for free).</li>
-                    <li>Onpage SEO.</li>
-                    <li>listing to marketplaces (Amazon/flipkart) etc</li>
-                    <li>Integration of shiprocket / dunzo for delivery.</li>
-                    <li>Delivery time min 2 weeks (for development process)..</li>
-                    <li>Total Cost = ₹ 35,000/-</li>
-                    <li>Annual Renewal = ₹ 10,000/-</li>
-                  </ul>
-                  <button class="package-button">Learn More</button>
-                </div>
-              </div>
-            </div>
+          <div class="services">
+              <h1 class="bold">Creativity</h1>
+              <p>
+                  We offer top-notch design services in the areas of branding, UI/UX, that helps keep your customers
+                  interested and engaged at every interaction.
+              </p>
           </div>
-        </section>
-        
-        
-        
+          <div class="services">
+              <h1 class="bold">Marketing</h1>
+              <p>
+                  We offer best-in-class digital marketing services like SEO, PPC, Email Marketing, and Social Media Marketing
+                  to keep your business visible to your targeted customers.
+              </p>
+          </div>
+          <div class="services">
+              <h1 class="bold">Development</h1>
+              <p>
+                  Bring your eCommerce vision to life with our expert development services. Whether you’re starting from
+                  scratch or looking to improve an existing site, our team will help you build a stronger online presence.
+              </p>
+          </div>
+      </div>
+  </section>
+  
+    <section class="packages">
+      <div class="container mx-auto px-4 py-8">
+        <div class="text-center my-5">
+          <h2 class="header-title">Our Packages</h2>
+        </div>
+        <div class="relative">
+          <div class="flex justify-center items-center mt-8">
+            <button class="custom-button" id="viewPlanButton">View Plan</button>
+          </div>
+          <img src="images/package.png" alt="packages" class="centered-image" />
 
-        <script src="js/scripts.js"></script>
-      </body>
-    </html>
+          <div class="package-grid" id="packagesGrid">
+            <div class="package-card" id="dropshipping">
+              <h3 class="package-title">Dropshipping</h3>
+              <ul class="package-list">
+                <li>Setup of Woocommerce/shopify / hostinger builder (Adding 21 products for fee).</li>
+                <li>Onpage SEO.</li>
+                <li>Integration of shiprocket for delivery.</li>
+                <li>Integration of payment gateway.</li>
+                <li>Domain & Hosting 2GB</li>
+                <li>Delivery time 2 weeks (for development process).</li>
+                <li>Total Cost = ₹ 30,000/-.</li>
+                <li>Annual Renewal = ₹ 10,000/-.</li>
+              </ul>
+              <button class="package-button">Learn More</button>
+            </div>
+            <div class="package-card" id="ecommerce">
+              <h3 class="package-title">E-Commerce</h3>
+              <ul class="package-list">
+                <li>Setup of Woocommerce/shopify / hostinger builder (Adding 21 products for free).</li>
+                <li>Onpage SEO.</li>
+                <li>listing to marketplaces (Amazon/flipkart) etc</li>
+                <li>Integration of shiprocket / dunzo for delivery.</li>
+                <li>Delivery time min 2 weeks (for development process)..</li>
+                <li>Total Cost = ₹ 35,000/-</li>
+                <li>Annual Renewal = ₹ 10,000/-</li>
+              </ul>
+              <button class="package-button">Learn More</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+    <script src="js/scripts.js"></script>
   </body>
+
+  </html>
+</body>
+
 </html>

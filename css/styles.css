@@ -319,18 +319,18 @@
   }
 
   /* about us */
-  .about-container {
+  .container {
     border-radius: 10px;
     margin: 20px;
     padding: 20px;
     max-width: 100%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 12px rgba(128, 128, 128, 0.5); /* Gray with 50% opacity */
     text-align: center;
     position: relative;
     overflow: hidden;
   }
   
-  .about-header {
+  .header {
     font-size: 2.5em;
     /* color: #333; */
     margin-bottom: 20px;
@@ -339,13 +339,13 @@
     text-decoration: double;
     font-weight: bold;
   }
-  /* .about-header {
+  .header {
     position: relative;
     display: inline-block;
     cursor: pointer; 
-  } */
+  }
   
-  .about-header::after {
+  .header::after {
     content: '';
     position: absolute;
     left: 50%;
@@ -357,11 +357,11 @@
     transform: translateX(-50%);
   }
   
-  .about-header:hover {
+  .header:hover {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow on hover */
   }
   
-  .about-header:hover::after {
+  .header:hover::after {
     width: 100%;
     left: 50%;
     background: #007BFF;
@@ -516,6 +516,74 @@ body.dark-theme .about-container {
     background: rgba(255, 255, 255, 0.7);
   }
   
+  .service-container {
+    display: flex;
+    justify-content: center;
+    width: 98%;
+    padding: 30px;
+}
+
+.service-container > h1 {
+    width: 50vw;
+    text-align: center;
+    color: #0056b3;
+}
+
+.services {
+    box-shadow: 2px solid #0056b3;
+    background-color: white;
+    margin: 10px;
+    padding: 15px;
+    font-weight: 300;
+    color: #000;
+    border-radius: 15px;
+}
+
+.bold {
+    font-weight: 900;
+    color: rgb(27, 7, 248);
+    font-size: 1.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .service-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .service-container > h1 {
+        width: 80vw;
+    }
+
+    .services {
+        width: 90%;
+    }
+
+    .bold {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .service-container {
+        padding: 15px;
+    }
+
+    .service-container > h1 {
+        width: 90vw;
+        font-size: 1.5rem;
+    }
+
+    .services {
+        width: 100%;
+    }
+
+    .bold {
+        font-size: 1rem;
+    }
+}
 
   /* Packages */
   .packages {
